@@ -1,0 +1,300 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica", "Lucida Sans", Tahoma, sans-serif;
+}
+
+*::-moz-selection {
+  color: white;
+  background-color: black;
+}
+
+*::selection {
+  color: white;
+  background-color: black;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: clamp(1rem, 0.5vw, 2rem);
+  background-color: #F7F7F7;
+  overflow: hidden;
+}
+
+#cursor {
+  height: 180px;
+  width: 180px;
+  background-color: rgba(213, 215, 238, 0.814);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 1;
+  pointer-events: none;
+}
+
+main {
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.page1 {
+  width: 100%;
+}
+.page1 nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.page1 nav h1 {
+  display: flex;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  flex-direction: column;
+  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 0.8;
+  margin-bottom: 1rem;
+}
+.page1 nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 3.5rem;
+  padding: 0;
+  justify-content: center;
+}
+.page1 nav ul li {
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+.page1 nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
+  font-size: 0.7rem;
+}
+.page1 .hero {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+.page1 .hero h1 {
+  font-size: clamp(3rem, 13.7vw, 14rem);
+  width: 100%;
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 0.8;
+  font-family: futura;
+  letter-spacing: -5px;
+}
+.page1 .hero .video {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.page1 .hero .video .playbtn {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  opacity: 0;
+  scale: 0;
+  pointer-events: none; /* allows mouse to pass through */
+  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+}
+.page1 .hero .video video {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: red;
+}
+.page1 .bottom {
+  display: flex;
+  margin: 3rem 0;
+  gap: 2rem;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.page1 .bottom h1 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 0.8;
+  align-items: center;
+  font-family: futura;
+  letter-spacing: -2px;
+}
+.page1 .bottom button {
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+  font-weight: 200;
+  line-height: 0.8;
+  cursor: pointer;
+}
+
+.page2 .card-container .card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page2 .card-container .card .dts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.page2 .pbottom h1 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 0.8;
+  align-items: center;
+  font-family: futura;
+  width: 50%;
+}
+
+.page4 {
+  margin: 5rem 0rem;
+  gap: 3rem;
+}
+.page4 h1 {
+  font-size: clamp(2rem, 4.8vw, 5rem);
+  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 1;
+  align-items: center;
+  font-family: futura;
+  width: 100%;
+}
+.page4 button {
+  padding: 1.2rem 3rem;
+  font-weight: 700;
+}
+.page4 button:hover {
+  color: rgb(95, 95, 95);
+  transition: all ease-in 0.1s;
+}
+
+.page5 h1 {
+  font-size: clamp(1.2rem, 1.8vw, 5rem);
+  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 1;
+  align-items: center;
+  font-family: futura;
+  width: 100%;
+}
+.page5 button {
+  font-family: "futura";
+}
+
+@media (max-width: 600px) {
+  .page5 {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+  .page5 p {
+    font-size: 2.8vw;
+  }
+  .page5 button {
+    font-size: 0.5rem;
+  }
+  .page5 .page5top {
+    width: 100%;
+    gap: 1rem;
+  }
+  .page5 .img {
+    width: 100%;
+  }
+  .page4 {
+    gap: 1.4rem;
+  }
+  .page4 h1 {
+    width: 100%;
+  }
+  .page4 button {
+    font-size: 1.5vw;
+    padding: 1;
+  }
+  .page4 .p4p {
+    width: 60%;
+  }
+  .page1 .bottom {
+    gap: 1rem;
+  }
+  .page1 .bottom p {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  .page1 .bottom button {
+    font-size: 0.8rem;
+  }
+  .page1 .hero h1 {
+    margin-top: 3rem;
+  }
+  .page1 nav {
+    gap: 1rem;
+  }
+  .page1 nav ul li {
+    display: none;
+  }
+  .page1 nav ul li:nth-child(6) {
+    display: block;
+    font-size: 1rem;
+  }
+  .page1 nav ul li:nth-child(5) {
+    display: block;
+    font-size: 1rem;
+  }
+  .page2 .card-container {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .page2 .card-container .card {
+    width: 100%;
+  }
+  .page2 .pbottom {
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+    padding: 2rem 0rem;
+  }
+  .page2 .pbottom h1 {
+    width: 100%;
+  }
+  .page2 .pbottom p {
+    width: 100%;
+  }
+}/*# sourceMappingURL=tgood.css.map */
